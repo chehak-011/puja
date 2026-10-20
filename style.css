@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff8ed;
+  color: #3d2418;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 45px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #a83232, #e08a28);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+select,
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #d6b58a;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.prayer-card {
+  margin: 25px 0;
+  padding: 28px;
+  border-left: 6px solid #d47724;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(80, 40, 10, 0.15);
+}
+
+.prayer-card h2 {
+  margin-top: 0;
+  color: #a83232;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.prayer-card h3 {
+  color: #d47724;
+  font-size: 16px;
+}
+
+.prayer-text {
+  white-space: pre-line;
+  font-family: "Noto Sans Devanagari", "Mangal", Arial, sans-serif;
+  font-size: 21px;
+  line-height: 2;
+  text-align: left;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  color: white;
+  background-color: #3d2418;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 32px;
+  }
+
+  .prayer-card {
+    padding: 18px;
+  }
+
+  .prayer-text {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
