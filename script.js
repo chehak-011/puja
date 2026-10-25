@@ -9,6 +9,7 @@ const prayers = [
 ];
 
 const prayerSelect = document.getElementById("prayerSelect");
+const categorySelect = document.getElementById("categorySelect");
 const searchInput = document.getElementById("searchInput");
 const prayerList = document.getElementById("prayerList");
 
@@ -66,4 +67,15 @@ searchInput.addEventListener("input", function () {
 });
 
 loadPrayerOptions();
-displayPrayers(prayers);
+displayPrayers(prayers);categorySelect.addEventListener("change", function () {
+  const selectedCategory = categorySelect.value;
+
+  const filteredPrayers = prayers.filter(function (prayer) {
+    return (
+      selectedCategory === "all" ||
+      prayer.category === selectedCategory
+    );
+  });
+
+  displayPrayers(filteredPrayers);
+});
