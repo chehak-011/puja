@@ -1,7 +1,7 @@
 const prayers = [
   {
   title: "Durga Chalisa",
-  category: "navratri",
+  category: "Navratri",
   text: `नमो नमो दुर्गे सुख करनी
 नमो नमो अम्बे दुःख हरनी
 निरंकार है ज्योति तुम्हारी
@@ -104,7 +104,7 @@ const prayers = [
 करहु कृपा जगदम्ब भवानी`
 },    {
   title: "Hanuman Chalisa",
-  category: "diwali",
+  category: "Diwali",
   text:'॥ दोहा ॥
 श्री गुरु चरण सरोज रज, निज मनु मुकुरु सुधारि।
 
