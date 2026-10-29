@@ -1,7 +1,7 @@
 const prayers = [
   {
     title: "Jai Ambe Gauri",
-    category: "Diwali Pujas",
+    category: "morning Diwali Pujas",
     text: `जय अम्बे गौरी, मैया जय श्यामा गौरी
 तुम को निशदिन ध्यावत
 तुम को निशदिन ध्यावत
@@ -111,7 +111,7 @@ const prayers = [
 
   {
     title: "Hanuman Chalisa",
-    category: "Diwali Pujas",
+    category: "morning Diwali Pujas",
     text: `दोहा
 
 श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
@@ -233,7 +233,7 @@ const prayers = [
 
   {
     title: "Meera Baba Ki Puja",
-    category: "After Sunset",
+    category: "diwali After Sunset",
     text: `भोर हुई, गंगा नहाकर,
 तेरे दर पर आई हूँ,
 मन में लेकर एक मन्नत,
@@ -312,7 +312,7 @@ const prayers = [
 
   {
     title: "Ganesh Aarti",
-    category: "Evening",
+    category: "diwali Evening",
     text: `जय गणेश, जय गणेश, जय गणेश देवा।
 माता जाकी पार्वती, पिता महादेवा।।
 
@@ -334,7 +334,7 @@ const prayers = [
 
   {
     title: "Lakshmi Aarti",
-    category: "Evening",
+    category: "diwali Evening",
     text: `ॐ जय लक्ष्मी माता, मैया, जय लक्ष्मी माता।
 तुमको निसदिन सेवत, मैया जी को निसदिन सेवत।
 हरि विष्णु धाता, ॐ जय लक्ष्मी माता।
@@ -381,7 +381,7 @@ const prayers = [
 
   {
     title: "Jai Jagdish Hare",
-    category: "Evening",
+    category: "diwali Evening",
     text: `ॐ जय जगदीश शिव हरे,
 स्वामी जय जगदीश शिव हरे।
 भक्त जनों के संकट,
@@ -453,7 +453,7 @@ const prayers = [
   },
     {
     title: "Saraswati Aarti",
-    category: "Evening",
+    category: "diwali Evening",
     text: `ॐ जय सरस्वती माता, मैया जय सरस्वती माता।
 सदगुण वैभव शालिनी, त्रिभुवन विख्याता॥ ॐ जय॥
 
@@ -481,7 +481,7 @@ const prayers = [
 
   {
     title: "Hanuman Aarti",
-    category: "Evening",
+    category: "diwali Evening",
     text: `आरती कीजै हनुमान लला की।
 दुष्ट दलन रघुनाथ कला की॥
 
@@ -536,7 +536,7 @@ const prayers = [
 
   {
     title: "Ram Stuti",
-    category: "Normal Day Pooja",
+    category: "diwali Evening",
     text: `श्री रामचन्द्र कृपालु भजु मन हरण भवभय दारुणम्।
 नवकंज लोचन, कंज मुख, कर कंज, पद कंजारुणम्॥
 
