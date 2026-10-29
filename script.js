@@ -648,12 +648,25 @@ function loadSubcategoryOptions() {
   const subcategories = [];
 
   prayers.forEach(function (prayer) {
+    console.log(prayer.subcategory);
+
     if (
       prayer.subcategory &&
       !subcategories.includes(prayer.subcategory)
     ) {
       subcategories.push(prayer.subcategory);
     }
+  });
+
+  subcategories.forEach(function (subcategory) {
+    const option = document.createElement("option");
+
+    option.value = subcategory;
+    option.textContent = subcategory;
+
+    subcategorySelect.appendChild(option);
+  });
+}
   });
 
   subcategories.forEach(function (subcategory) {
