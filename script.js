@@ -574,38 +574,54 @@ const prayers = [
 ];
 const prayerSelect = document.getElementById("prayerSelect");
 const categorySelect = document.getElementById("categorySelect");
+const subcategorySelect = document.getElementById("subcategorySelect");
 const searchInput = document.getElementById("searchInput");
 const prayerList = document.getElementById("prayerList");
+
 function displayPrayers(list) {
   prayerList.innerHTML = "";
+
   if (list.length === 0) {
     prayerList.innerHTML = "<p>No prayers found.</p>";
     return;
   }
+
   list.forEach(function (prayer) {
     const prayerCard = document.createElement("article");
-prayerCard.className = "prayer-card";
 
-prayerCard.innerHTML = `
-  <h2>${prayer.title}</h2>
-  <h3>${prayer.category}</h3>
-  <div class="prayer-text">${prayer.text}</div>
-`;
+    prayerCard.className = "prayer-card";
 
-prayerList.appendChild(prayerCard);
+    prayerCard.innerHTML = `
+      <h2>${prayer.title}</h2>
+      <p class="category">${prayer.category}</p>
+      <p class="subcategory">${prayer.subcategory}</p>
+      <div class="prayer-text">${prayer.text}</div>
+    `;
+
+    prayerList.appendChild(prayerCard);
   });
 }
+
 function loadPrayerOptions() {
+  prayerSelect.innerHTML =
+    '<option value="all">All Prayers</option>';
+
   prayers.forEach(function (prayer, index) {
     const option = document.createElement("option");
-option.value = index;
-option.textContent = prayer.title;
 
-prayerSelect.appendChild(option);
+    option.value = String(index);
+    option.textContent = prayer.title;
+
+    prayerSelect.appendChild(option);
   });
 }
+
 function loadCategoryOptions() {
+  categorySelect.innerHTML =
+    '<option value="all">All Categories</option>';
+
   const categories = [];
+
   prayers.forEach(function (prayer) {
     if (
       prayer.category &&
@@ -614,36 +630,108 @@ function loadCategoryOptions() {
       categories.push(prayer.category);
     }
   });
+
   categories.forEach(function (category) {
     const option = document.createElement("option");
-option.value = category;
-option.textContent = category;
 
-categorySelect.appendChild(option);
+    option.value = category;
+    option.textContent = category;
+
+    categorySelect.appendChild(option);
   });
 }
+
+function loadSubcategoryOptions() {
+  subcategorySelect.innerHTML =
+    '<option value="all">All Subcategories</option>';
+
+  const subcategories = [];
+
+  prayers.forEach(function (prayer) {
+    if (
+      prayer.subcategory &&
+      !subcategories.includes(prayer.subcategory)
+    ) {
+      subcategories.push(prayer.subcategory);
+    }
+  });
+
+  subcategories.forEach(function (subcategory) {
+    const option = document.createElement("option");
+
+    option.value = subcategory;
+    option.textContent = subcategory;
+
+    subcategorySelect.appendChild(option);
+  });
+}
+
 function updatePrayerList() {
   const selectedPrayer = prayerSelect.value;
   const selectedCategory = categorySelect.value;
-  const searchText = searchInput.value.toLowerCase();
-  const filteredPrayers = prayers.filter(function (prayer, index) {
+  const selectedSubcategory = subcategorySelect.value;
+  const searchText = searchInput.value
+    .trim()
+    .toLowerCase();
+
+  const filteredPrayers = prayers.filter(function (
+    prayer,
+    index
+  ) {
     const matchesPrayer =
       selectedPrayer === "all" ||
       selectedPrayer === String(index);
-const matchesCategory =
-  selectedCategory === "all" ||
-  prayer.category === selectedCategory;
 
-const matchesSearch =
-  prayer.title.toLowerCase().includes(searchText);
+    const matchesCategory =
+      selectedCategory === "all" ||
+      prayer.category === selectedCategory;
 
-return matchesPrayer && matchesCategory && matchesSearch;
+    const matchesSubcategory =
+      selectedSubcategory === "all" ||
+      prayer.subcategory === selectedSubcategory;
+
+    const searchableText = `
+      ${prayer.title}
+      ${prayer.category}
+      ${prayer.subcategory}
+      ${prayer.text}
+    `.toLowerCase();
+
+    const matchesSearch =
+      searchableText.includes(searchText);
+
+    return (
+      matchesPrayer &&
+      matchesCategory &&
+      matchesSubcategory &&
+      matchesSearch
+    );
   });
+
   displayPrayers(filteredPrayers);
 }
-prayerSelect.addEventListener("change", updatePrayerList);
-categorySelect.addEventListener("change", updatePrayerList);
-searchInput.addEventListener("input", updatePrayerList);
+
+prayerSelect.addEventListener(
+  "change",
+  updatePrayerList
+);
+
+categorySelect.addEventListener(
+  "change",
+  updatePrayerList
+);
+
+subcategorySelect.addEventListener(
+  "change",
+  updatePrayerList
+);
+
+searchInput.addEventListener(
+  "input",
+  updatePrayerList
+);
+
 loadPrayerOptions();
 loadCategoryOptions();
+loadSubcategoryOptions();
 displayPrayers(prayers);
