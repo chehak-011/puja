@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,36 +13,61 @@
 
   <header>
     <h1>My Family Prayer Book</h1>
-    <p>Choose a language and select a prayer</p>
+    <p>Choose a prayer or read a story</p>
   </header>
 
   <main>
 
-    <label for="prayerSelect">Choose a prayer:</label>
+    <section class="prayers-section">
+      <h2>Prayers</h2>
 
-    <select id="prayerSelect">
-      <option value="all">All Prayers</option>
-    </select>
+      <label for="prayerSelect">
+        Choose a prayer:
+      </label>
 
-    <label for="categorySelect">Choose a category:</label>
+      <select id="prayerSelect">
+        <option value="all">All Prayers</option>
+      </select>
 
-    <select id="categorySelect">
-      <option value="all">All Categories</option>
-    </select>
+      <label for="categorySelect">
+        Choose a category:
+      </label>
 
-    <label for="subcategorySelect">Choose a subcategory:</label>
+      <select id="categorySelect">
+        <option value="all">All Categories</option>
+      </select>
 
-<select id="subcategorySelect">
-  <option value="all">All Subcategories</option>
-</select>
+      <label for="subcategorySelect">
+        Choose a subcategory:
+      </label>
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search for a prayer..."
-    >
+      <select id="subcategorySelect">
+        <option value="all">All Subcategories</option>
+      </select>
 
-    <section id="prayerList"></section>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a prayer..."
+      >
+
+      <section id="prayerList"></section>
+    </section>
+
+
+    <section class="stories-section">
+      <h2>Stories</h2>
+
+      <label for="storySelect">
+        Choose a story:
+      </label>
+
+      <select id="storySelect">
+        <option value="all">All Stories</option>
+      </select>
+
+      <section id="storyList"></section>
+    </section>
 
   </main>
 
