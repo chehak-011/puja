@@ -766,6 +766,9 @@ function loadSubcategoryOptions() {
     subcategorySelect.appendChild(option);
   });
 }
+  }
+
+function updatePrayerList() {
   const selectedPrayer = prayerSelect.value;
   const selectedCategory = categorySelect.value;
   const selectedSubcategory = subcategorySelect.value;
