@@ -820,7 +820,10 @@ prayerSelect.addEventListener(
 
 categorySelect.addEventListener(
   "change",
-  updatePrayerList
+  function () {
+    loadSubcategoryOptions(categorySelect.value);
+    updatePrayerList();
+  }
 );
 
 subcategorySelect.addEventListener(
@@ -835,5 +838,5 @@ searchInput.addEventListener(
 
 loadPrayerOptions();
 loadCategoryOptions();
-loadSubcategoryOptions();
+loadSubcategoryOptions("all");
 displayPrayers(prayers);
